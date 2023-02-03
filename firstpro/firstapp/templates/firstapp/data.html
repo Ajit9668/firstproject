@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+       {% include 'firstapp/cdnline.html' %}
+</head>
+<body>
+    <table class="table table-bordered text-center">
+        <thead class="text-white bg-success">
+            <tr>
+                <th>Module Name</th>
+                <th>Module Image</th>
+                <th>Module Link</th>
+                <th>Module Sequence No.</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-white bg-dark">
+            {% for i in data %}
+            <tr>
+                <td>{{i.Module_Name}}</td>
+                <td>{{i.Module_Image}}</td>
+                <td>{{i.Module_Link}}</td>
+                <td>{{i.Module_SeqNo}}</td>
+                <td><a href="{% url 'updating' i.id %}" class="btn btn-sm btn-outline-warning">Update</a>
+                <a href="{% url 'delete' i.id %}" class="btn btn-sm btn-outline-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

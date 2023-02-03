@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Data Insert</title>
+     {% include 'firstapp/cdnline.html' %}
+</head>
+<body>
+     <h1 class="text-center mt-3">Insert Your Data</h1>
+    <div class="container">
+          <div class="row">
+               <div class="offset-3 col-md-6">
+                    <form method="POST">
+                         {% csrf_token %}
+                         <div class="row">
+                              <div class="col-md-6">
+                                   <input type="text" name="name" class="form-control" placeholder="Module Name:" style="width: 250px; height: 250px;">
+                              </div>
+                         <div class="col-md-6">
+                              <input type="text" name="image" class="form-control" placeholder="Module Image:" style="width: 250px; height: 250px;">
+                         </div>
+                         </div>
+                         <div class="row mt-3">
+                              <div class="col-md-6">
+                                   <input type="text"  name="link" class="form-control" placeholder="Module Link:" style="width: 250px; height: 250px;">
+                              </div>
+                         <div class="col-md-6">
+                              <input type="text" name="sequence" class="form-control" placeholder="Module Sequence No:" style="width: 250px; height: 250px;">
+                         </div>
+                         </div>
+                         <center class="mt-2">
+                              <input type="submit" value="Submit" class="btn btn-sm btn-outline-success">
+                              <input type="reset" value="Cancel" class="btn btn-sm btn-outline-danger">
+                         </center>
+                    </form>
+               </div>
+          </div>
+    </div>
+</body>
+</html>
